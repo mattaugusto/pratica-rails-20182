@@ -4,7 +4,9 @@ class PharmaciesController < ApplicationController
   # GET /pharmacies
   # GET /pharmacies.json
   def index
-    @pharmacies = Pharmacy.all
+    @pharmacies = Pharmacy.all.page(
+      params[:page]
+    ).per(10)
   end
 
   # GET /pharmacies/1
@@ -69,6 +71,22 @@ class PharmaciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pharmacy_params
-      params.require(:pharmacy).permit(:ibge, :uf, :cidade, :nome, :endereco, :bairro, :cep, :ddd, :telefone, :email, :cnpj_farmacia, :cnpj_matriz, :ano, :mes)
+      params.require(:pharmacy).permit(
+        :ibge,
+        :uf,
+        :cidade,
+        :nome,
+        :endereco,
+        :bairro,
+        :cep,
+        :ddd,
+        :telefone,
+        :email,
+        :cnpj_farmacia,
+        :cnpj_matriz,
+        :ano,
+        :mes,
+        contacts_attributes: [:id, :tipo, :valor, :_destroy]
+      )
     end
 end

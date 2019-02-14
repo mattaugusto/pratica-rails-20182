@@ -1,74 +1,73 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>Ibge:</strong>
+    <%= @pharmacy.ibge %>
+  </p>
 
-<p>
-  <strong>Ibge:</strong>
-  <%= @pharmacy.ibge %>
-</p>
+  <p>
+    <strong>Uf:</strong>
+    <%= @pharmacy.uf %>
+  </p>
 
-<p>
-  <strong>Uf:</strong>
-  <%= @pharmacy.uf %>
-</p>
+  <p>
+    <strong>Cidade:</strong>
+    <%= @pharmacy.cidade %>
+  </p>
 
-<p>
-  <strong>Cidade:</strong>
-  <%= @pharmacy.cidade %>
-</p>
+  <p>
+    <strong>Nome:</strong>
+    <%= @pharmacy.nome %>
+  </p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @pharmacy.nome %>
-</p>
+  <p>
+    <strong>Endereco:</strong>
+    <%= @pharmacy.endereco %>
+  </p>
 
-<p>
-  <strong>Endereco:</strong>
-  <%= @pharmacy.endereco %>
-</p>
+  <p>
+    <strong>Bairro:</strong>
+    <%= @pharmacy.bairro %>
+  </p>
 
-<p>
-  <strong>Bairro:</strong>
-  <%= @pharmacy.bairro %>
-</p>
+  <p>
+    <strong>Cep:</strong>
+    <%= @pharmacy.cep %>
+  </p>
 
-<p>
-  <strong>Cep:</strong>
-  <%= @pharmacy.cep %>
-</p>
+  <p>
+    <strong>Ddd:</strong>
+    <%= @pharmacy.ddd %>
+  </p>
 
-<p>
-  <strong>Ddd:</strong>
-  <%= @pharmacy.ddd %>
-</p>
+  <p>
+    <strong>Contatos:</strong>
+    <br>
+    <% for contato in @pharmacy.contacts %>
+        <%= contato.tipo %>: <%= contato.valor %>
+        <br>
+    <% end %>
+  </p>
+  <p>
+    <strong>Cnpj farmacia:</strong>
+    <%= @pharmacy.cnpj_farmacia %>
+  </p>
 
-<p>
-  <strong>Telefone:</strong>
-  <%= @pharmacy.telefone %>
-</p>
+  <p>
+    <strong>Cnpj matriz:</strong>
+    <%= @pharmacy.cnpj_matriz %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @pharmacy.email %>
-</p>
+  <p>
+    <strong>Ano:</strong>
+    <%= @pharmacy.ano %>
+  </p>
 
-<p>
-  <strong>Cnpj farmacia:</strong>
-  <%= @pharmacy.cnpj_farmacia %>
-</p>
+  <p>
+    <strong>Mes:</strong>
+    <%= @pharmacy.mes %>
+  </p>
 
-<p>
-  <strong>Cnpj matriz:</strong>
-  <%= @pharmacy.cnpj_matriz %>
-</p>
-
-<p>
-  <strong>Ano:</strong>
-  <%= @pharmacy.ano %>
-</p>
-
-<p>
-  <strong>Mes:</strong>
-  <%= @pharmacy.mes %>
-</p>
-
-<%= link_to 'Edit', edit_pharmacy_path(@pharmacy) %> |
-<%= link_to 'Back', pharmacies_path %>
+  <%= link_to 'Edit', edit_pharmacy_path(@pharmacy) %> |
+  <%= link_to 'Back', pharmacies_path %>
+</div>
