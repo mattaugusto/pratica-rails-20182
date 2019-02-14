@@ -6,9 +6,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Ibge</th>
         <th>Uf</th>
-        <th>Cidade</th>
         <th>Nome</th>
         <th>Endereco</th>
         <th>Bairro</th>
@@ -25,9 +23,7 @@
     <tbody>
       <% @pharmacies.each do |pharmacy| %>
         <tr>
-          <td><%= pharmacy.ibge %></td>
           <td><%= pharmacy.uf %></td>
-          <td><%= pharmacy.cidade %></td>
           <td><%= pharmacy.nome %></td>
           <td><%= pharmacy.endereco %></td>
           <td><%= pharmacy.bairro %></td>

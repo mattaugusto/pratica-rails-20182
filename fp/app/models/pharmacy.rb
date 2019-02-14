@@ -1,8 +1,8 @@
 class Pharmacy < ApplicationRecord
   has_many :contacts
-
+  belongs_to :cities
   accepts_nested_attributes_for :contacts, reject_if: :all_blank, allow_destroy: true
-  
+
   validates :ibge, presence: true
 	validates :uf, presence: true
 	validates :cidade, presence: true

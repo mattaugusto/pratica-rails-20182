@@ -10,16 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_14_200040) do
-
-  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "tipo"
-    t.string "valor"
-    t.bigint "pharmacy_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["pharmacy_id"], name: "index_contacts_on_pharmacy_id"
-  end
+ActiveRecord::Schema.define(version: 2019_02_14_135952) do
 
   create_table "pharmacies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "ibge"
@@ -30,6 +21,8 @@ ActiveRecord::Schema.define(version: 2019_02_14_200040) do
     t.string "bairro"
     t.string "cep"
     t.integer "ddd"
+    t.string "telefone"
+    t.string "email"
     t.string "cnpj_farmacia"
     t.string "cnpj_matriz"
     t.integer "ano"
@@ -38,5 +31,4 @@ ActiveRecord::Schema.define(version: 2019_02_14_200040) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "contacts", "pharmacies"
 end

@@ -1,18 +1,13 @@
 <div class="container-fluid">
   <p id="notice"><%= notice %></p>
   <p>
-    <strong>Ibge:</strong>
-    <%= @pharmacy.ibge %>
-  </p>
-
-  <p>
     <strong>Uf:</strong>
     <%= @pharmacy.uf %>
   </p>
 
   <p>
     <strong>Cidade:</strong>
-    <%= @pharmacy.cidade %>
+    <%= City.find(@pharmacy.cities_id) %>
   </p>
 
   <p>
@@ -48,6 +43,7 @@
         <br>
     <% end %>
   </p>
+
   <p>
     <strong>Cnpj farmacia:</strong>
     <%= @pharmacy.cnpj_farmacia %>
